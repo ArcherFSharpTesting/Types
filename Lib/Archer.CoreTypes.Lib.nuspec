@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>jason-kerney</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/ArcherFSharpTesting/Archer.CoreTypes</projectUrl>
+    <description>The common types shared accross Archer Packages</description>
+    <releaseNotes>None</releaseNotes>
+    <copyright>© Robert Jason Kerney 2023</copyright>
+    <tags>F# FSharp Test Testing Framework Unit UnitTest</tags>
+  </metadata>
+</package>
