@@ -1,4 +1,4 @@
-﻿namespace Archer.CoreTypes.TestResults
+﻿namespace Archer.CoreTypes.Lib
 
 type Failure =
     | VerificationFailure of string

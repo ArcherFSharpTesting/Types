@@ -6,11 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Types.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\TRTypes\Archer.CoreTypes.TestResults.fsproj" />
+    <Compile Include="PublicTypes.fs" />
+    <Compile Include="InternalTypes.fs" />
   </ItemGroup>
 
 </Project>

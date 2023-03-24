@@ -1,8 +1,8 @@
-﻿namespace Archer.CoreTypes.TestDef
+namespace Archer.CoreTypes.Lib.InternalTypes
 
 open System
 open System.ComponentModel
-open Archer.CoreTypes.TestResults
+open Archer.CoreTypes.Lib
 
 type TestCancelEventArgsWithResults (cancel: bool, result: TestResult) =
     inherit CancelEventArgs (cancel)
