@@ -20,6 +20,9 @@ type CancelTestDelegate = delegate of obj * TestCancelEventArgsWithResults -> un
 type CancelDelegate = delegate of obj * CancelEventArgs -> unit
 type Delegate = delegate of obj * TestEventArgs -> unit
 
+type TestTag =
+    | Category of string
+
 type ITestExecutor =
     [<CLIEvent>]
     abstract member StartExecution: IEvent<CancelDelegate, CancelEventArgs> with get
@@ -49,6 +52,8 @@ and ITest =
     abstract member ContainerName: string with get
     abstract member TestFullName: string with get
     abstract member TestName: string with get
+    abstract member LineNumber: int with get
+    abstract member Tags: TestTag seq
     abstract member GetExecutor: unit -> ITestExecutor 
     
 type TestTiming = {
