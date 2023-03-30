@@ -9,12 +9,14 @@ type TestCancelEventArgsWithResults (cancel: bool, result: TestResult) =
     
     new (result: TestResult) = TestCancelEventArgsWithResults (false, result)
     
-    member _.TestResult with get () = result
+    member _.TestResult with get () = result 
   
 type TestEventArgs (result: TestResult) =
     inherit EventArgs()
     
     member _.TestResult with get () = result
+    static member Success with get () = TestEventArgs TestSuccess
+    static member Failure failure = TestFailure failure
 
 type CancelTestDelegate = delegate of obj * TestCancelEventArgsWithResults -> unit
 type CancelDelegate = delegate of obj * CancelEventArgs -> unit
