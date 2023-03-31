@@ -5,6 +5,16 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Version>0.0.1</Version>
     <Authors>Jason-Kerney</Authors>
+    <Description>A test executor to run Archer Tests</Description>
+    <Copyright>© Robert Jason Kerney 2023</Copyright>
+    <PackageProjectUrl>https://github.com/ArcherFSharpTesting/Archer.CoreTypes</PackageProjectUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/ArcherFSharpTesting/Archer.CoreTypes</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>F# FSharp Test Testing Framework Unit UnitTest</PackageTags>
+    <PackageReleaseNotes>None</PackageReleaseNotes>
+    <AssemblyVersion>0.0.1</AssemblyVersion>
+    <FileVersion>0.0.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
