@@ -20,7 +20,8 @@ type TestEventArgs (result: TestResult) =
 
 type CancelTestDelegate = delegate of obj * TestCancelEventArgsWithResults -> unit
 type CancelDelegate = delegate of obj * CancelEventArgs -> unit
-type Delegate = delegate of obj * TestEventArgs -> unit
+type TestResultDelegate = delegate of obj * TestEventArgs -> unit
+type TestDelegate = delegate of obj * EventArgs -> unit
 
 type TestTag =
     | Category of string
@@ -37,13 +38,13 @@ type ITestExecutor =
     [<CLIEvent>]
     abstract member StartTest: IEvent<CancelDelegate, CancelEventArgs> with get
     [<CLIEvent>]
-    abstract member EndTest: IEvent<CancelTestDelegate, TestCancelEventArgsWithResults> with get
+    abstract member EndTest: IEvent<TestResultDelegate, TestEventArgs> with get
     
     [<CLIEvent>]
-    abstract member StartTearDown: IEvent<CancelDelegate, CancelEventArgs> with get
+    abstract member StartTearDown: IEvent<TestDelegate, EventArgs> with get
     
     [<CLIEvent>]
-    abstract member EndExecution: IEvent<Delegate, TestEventArgs> with get
+    abstract member EndExecution: IEvent<TestResultDelegate, TestEventArgs> with get
 
     abstract member Execute: unit -> TestResult
     
