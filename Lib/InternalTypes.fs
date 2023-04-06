@@ -55,6 +55,8 @@ and ITest =
     abstract member ContainerName: string with get
     abstract member TestFullName: string with get
     abstract member TestName: string with get
+    abstract member FilePath: string with get
+    abstract member FileName: string with get
     abstract member LineNumber: int with get
     abstract member Tags: TestTag seq
     abstract member GetExecutor: unit -> ITestExecutor 
