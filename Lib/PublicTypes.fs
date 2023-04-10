@@ -34,8 +34,8 @@ type TestingFailure =
     | SetupFailure of string
     | CancelFailure
     | TearDownFailure of string
-    | IgnoredFailure of string option
     
 type TestResult =
+    | Ignored of string option
     | TestSuccess
     | TestFailure of TestingFailure

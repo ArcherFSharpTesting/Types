@@ -6,9 +6,19 @@ open System.ComponentModel
 open Archer
 open Archer.CoreTypes.InternalTypes
 
+type TestFailContainer =
+    | EmptyFailures
+    | FailedTests of (TestingFailure * ITest) list
+    | FailContainer of name: string * (TestFailContainer list)
+    
+type TestSuccessContainer =
+    | EmptySuccesses
+    | SucceededTests of ITest list
+    | SuccessContainer of name: string * (TestSuccessContainer list)
+
 type RunResults = {
-    Failures: (TestingFailure * ITest) list
-    Successes: ITest list
+    Failures: TestFailContainer list
+    Successes: TestSuccessContainer list
     Seed: int
 }
 
