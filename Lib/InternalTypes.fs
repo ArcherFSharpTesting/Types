@@ -51,7 +51,7 @@ type ITestExecutor =
     abstract member Parent: ITest with get
 
 and ITest =
-    abstract member ContainerFullName: string with get
+    abstract member ContainerPath: string with get
     abstract member ContainerName: string with get
     abstract member TestFullName: string with get
     abstract member TestName: string with get
