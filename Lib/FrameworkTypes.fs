@@ -15,10 +15,16 @@ type TestSuccessContainer =
     | EmptySuccesses
     | SucceededTests of ITest list
     | SuccessContainer of name: string * (TestSuccessContainer list)
+    
+type TestIgnoreContainer =
+    | EmptyIgnore
+    | IgnoredTests of (string option * ITest) list
+    | IgnoreContainer of name: string * (TestIgnoreContainer list)
 
 type RunResults = {
     Failures: TestFailContainer list
     Successes: TestSuccessContainer list
+    Ignored: TestIgnoreContainer list
     Seed: int
 }
 
