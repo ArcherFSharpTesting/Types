@@ -51,7 +51,7 @@ type FrameworkTestResultCancelDelegate = delegate of obj * FrameworkTestResultCa
 type IFramework =
     abstract member Run: unit -> RunResults
     abstract member Run: getSeed: (unit -> int) -> RunResults
-    abstract member AddTests: newTests: (ITest seq) -> unit
+    abstract member AddTests: newTests: (ITest seq) -> IFramework
     [<CLIEvent>]
     abstract member FrameworkStartExecution: IEvent<FrameworkCancelDelegate, CancelEventArgs>
     [<CLIEvent>]
