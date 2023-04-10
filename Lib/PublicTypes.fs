@@ -1,11 +1,11 @@
-﻿namespace Archer.CoreTypes
+﻿namespace Archer
 
 type VerificationInfo = {
     Expected: string
     Actual: string
 }
 
-type Failure =
+type TestingFailure =
     | VerificationFailure of VerificationInfo
     | ExceptionFailure of exn
     | GeneralFailure of string
@@ -13,9 +13,9 @@ type Failure =
     | CancelFailure
     | IgnoredFailure of string option
     | TearDownFailure of string
-    | FailureWithMessage of string * Failure
-    | CombinationFailure of Failure * Failure
+    | FailureWithMessage of string * TestingFailure
+    | CombinationFailure of TestingFailure * TestingFailure
     
 type TestResult =
     | TestSuccess
-    | TestFailure of Failure
+    | TestFailure of TestingFailure

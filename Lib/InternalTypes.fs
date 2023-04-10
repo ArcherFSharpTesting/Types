@@ -2,7 +2,7 @@ namespace Archer.CoreTypes.InternalTypes
 
 open System
 open System.ComponentModel
-open Archer.CoreTypes
+open Archer
 
 type TestCancelEventArgsWithResults (cancel: bool, result: TestResult) =
     inherit CancelEventArgs (cancel)
@@ -53,7 +53,6 @@ type ITestExecutor =
 and ITest =
     abstract member ContainerPath: string with get
     abstract member ContainerName: string with get
-    abstract member TestFullName: string with get
     abstract member TestName: string with get
     abstract member FilePath: string with get
     abstract member FileName: string with get
