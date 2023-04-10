@@ -37,6 +37,10 @@
         {
             "name": "undo",
             "command": "git reset . && git checkout . && git clean -xfd"
+        },
+        {
+            "name": "pack",
+            "command": "gittey push && dotnet pack"
         }
     ],
     "collaborators": []
