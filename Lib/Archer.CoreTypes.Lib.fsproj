@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>0.0.13.4</Version>
     <Authors>Jason-Kerney</Authors>
     <Description>A test executor to run Archer Tests</Description>
     <Copyright>© Robert Jason Kerney 2023</Copyright>
@@ -12,16 +11,24 @@
     <RepositoryType>GitHub</RepositoryType>
     <PackageTags>F# FSharp Test Testing Framework Unit UnitTest</PackageTags>
     <PackageReleaseNotes>None</PackageReleaseNotes>
-    <AssemblyVersion></AssemblyVersion>
-    <FileVersion></FileVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
     <RootNamespace>Archer</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <AssemblyAttribute Include="WhatsYourVersion.BuildDateAttribute">
+      <_Parameter1>$([System.DateTime]::UtcNow.ToString("yyyyMMddHHmmss"))</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="PublicTypes.fs" />
     <Compile Include="InternalTypes.fs" />
     <Compile Include="FrameworkTypes.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="whats-your-version" Version="2.1.0" />
   </ItemGroup>
 
 </Project>
