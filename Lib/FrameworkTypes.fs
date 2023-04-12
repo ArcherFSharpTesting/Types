@@ -28,6 +28,13 @@ type RunResults = {
     Seed: int
 }
 
+type FrameworkEventLifecycle =
+    | FrameworkStartExecution of CancelEventArgs
+    | TestLifeCycle of TestEventLifecycle
+    | FrameworkEndExecution
+    
+type FrameworkExecutionDelegate = delegate of obj * FrameworkEventLifecycle -> unit
+
 type FrameWorkTestArgs (test: ITest) =
     inherit EventArgs ()
     
@@ -67,22 +74,6 @@ type FrameworkTestResultCancelDelegate = delegate of obj * FrameworkTestResultCa
 type IFramework =
     abstract member Run: unit -> RunResults
     abstract member Run: getSeed: (unit -> int) -> RunResults
-    abstract member AddTests: newTests: (ITest seq) -> IFramework
+    abstract member AddTests: newTests: ITest seq -> IFramework
     [<CLIEvent>]
-    abstract member FrameworkStartExecution: IEvent<FrameworkCancelDelegate, CancelEventArgs>
-    [<CLIEvent>]
-    abstract member FrameworkEndExecution: IEvent<FrameworkDelegate, EventArgs>
-    [<CLIEvent>]
-    abstract member TestStartExecution: IEvent<FrameworkTestCancelDelegate, FrameworkTestCancelArgs>
-    [<CLIEvent>]
-    abstract member TestStartSetup: IEvent<FrameworkTestCancelDelegate, FrameworkTestCancelArgs>
-    [<CLIEvent>]
-    abstract member TestEndSetup: IEvent<FrameworkTestResultCancelDelegate, FrameworkTestResultCancelArgs>
-    [<CLIEvent>]
-    abstract member TestStart: IEvent<FrameworkTestCancelDelegate, FrameworkTestCancelArgs>
-    [<CLIEvent>]
-    abstract member TestEnd: IEvent<FrameworkTestResultDelegate, FrameWorkTestResultArgs>
-    [<CLIEvent>]
-    abstract member TestStartTearDown: IEvent<FrameworkTestDelegate, FrameWorkTestArgs>
-    [<CLIEvent>]
-    abstract member TestEndExecution: IEvent<FrameworkTestResultDelegate, FrameWorkTestResultArgs>
+    abstract member FrameworkLifecycleEvent: IEvent<FrameworkExecutionDelegate, FrameworkEventLifecycle>

@@ -4,44 +4,21 @@ open System
 open System.ComponentModel
 open Archer
 
-type TestCancelEventArgsWithResults (cancel: bool, result: TestResult) =
-    inherit CancelEventArgs (cancel)
-    
-    new (result: TestResult) = TestCancelEventArgsWithResults (false, result)
-    
-    member _.TestResult with get () = result 
-  
-type TestEventArgs (result: TestResult) =
-    inherit EventArgs()
-    
-    member _.TestResult with get () = result
-    static member Success with get () = TestEventArgs TestSuccess
-    static member Failure failure = TestFailure failure
 
-type CancelTestDelegate = delegate of obj * TestCancelEventArgsWithResults -> unit
-type CancelDelegate = delegate of obj * CancelEventArgs -> unit
-type TestResultDelegate = delegate of obj * TestEventArgs -> unit
-type TestDelegate = delegate of obj * EventArgs -> unit
+type TestEventLifecycle =
+    | TestExecutionStarted of CancelEventArgs
+    | TestSetupStarted of CancelEventArgs
+    | TestEndSetup of result: TestResult * cancelArgs: CancelEventArgs
+    | TestStart of CancelEventArgs
+    | TestEnd of TestResult
+    | TestStartTearDown
+    | TestEndExecution of TestResult
+    
+type TestExecutionDelegate = delegate of obj * TestEventLifecycle -> unit
 
 type ITestExecutor =
     [<CLIEvent>]
-    abstract member StartExecution: IEvent<CancelDelegate, CancelEventArgs> with get
-    
-    [<CLIEvent>]
-    abstract member StartSetup: IEvent<CancelDelegate, CancelEventArgs> with get
-    [<CLIEvent>]
-    abstract member EndSetup: IEvent<CancelTestDelegate, TestCancelEventArgsWithResults> with get
-    
-    [<CLIEvent>]
-    abstract member StartTest: IEvent<CancelDelegate, CancelEventArgs> with get
-    [<CLIEvent>]
-    abstract member EndTest: IEvent<TestResultDelegate, TestEventArgs> with get
-    
-    [<CLIEvent>]
-    abstract member StartTearDown: IEvent<TestDelegate, EventArgs> with get
-    
-    [<CLIEvent>]
-    abstract member EndExecution: IEvent<TestResultDelegate, TestEventArgs> with get
+    abstract member TestLifecycleEvent: IEvent<TestExecutionDelegate, TestEventLifecycle>
 
     abstract member Execute: FrameworkEnvironment -> TestResult
     
