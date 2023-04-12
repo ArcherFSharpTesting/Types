@@ -30,16 +30,16 @@ type VerificationInfo = {
 }
 
 type TestingFailure =
-    | FailureWithMessage of string * TestingFailure
+    | FailureWithMessage of message: string * failure: TestingFailure
     | CombinationFailure of TestingFailure * TestingFailure
     | ExceptionFailure of exn
-    | VerificationFailure of VerificationInfo * CodeLocation
-    | GeneralFailure of string * CodeLocation
-    | SetupFailure of string * CodeLocation
+    | VerificationFailure of failure: VerificationInfo * location: CodeLocation
+    | GeneralFailure of message: string * location: CodeLocation
+    | SetupFailure of message: string * location: CodeLocation
     | CancelFailure
-    | TearDownFailure of string * CodeLocation
+    | TearDownFailure of message: string * location: CodeLocation
     
 type TestResult =
-    | Ignored of string option * CodeLocation
+    | Ignored of message: string option * location: CodeLocation
     | TestSuccess
-    | TestFailure of TestingFailure
+    | TestFailure of failure: TestingFailure
