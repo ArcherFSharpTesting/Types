@@ -18,7 +18,7 @@ type TestSuccessContainer =
     
 type TestIgnoreContainer =
     | EmptyIgnore
-    | IgnoredTests of (string option * ITest) list
+    | IgnoredTests of (string option * CodeLocation * ITest) list
     | IgnoreContainer of name: string * (TestIgnoreContainer list)
 
 type RunResults = {
