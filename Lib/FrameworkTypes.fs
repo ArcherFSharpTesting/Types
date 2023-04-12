@@ -30,7 +30,7 @@ type RunResults = {
 
 type FrameworkEventLifecycle =
     | FrameworkStartExecution of CancelEventArgs
-    | FrameworkTestLifeCycle of ITest * TestEventLifecycle
+    | FrameworkTestLifeCycle of ITest * TestEventLifecycle * CancelEventArgs
     | FrameworkEndExecution
     
 type FrameworkExecutionDelegate = delegate of obj * FrameworkEventLifecycle -> unit
