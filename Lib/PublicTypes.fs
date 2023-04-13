@@ -48,6 +48,6 @@ type TestingFailure =
     | TearDownFailure of failure: SetupTearDownFailure
     
 type TestResult =
-    | Ignored of message: string option * location: CodeLocation
+    | TestIgnored of message: string option * location: CodeLocation
     | TestSuccess
     | TestFailure of failure: TestingFailure
