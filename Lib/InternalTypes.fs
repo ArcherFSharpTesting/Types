@@ -6,7 +6,7 @@ open Archer
 
 
 type TestEventLifecycle =
-    | TestExecutionStarted of CancelEventArgs
+    | TestStartExecution of CancelEventArgs
     | TestSetupStarted of CancelEventArgs
     | TestEndSetup of testResult: TestResult * cancelEventArgs: CancelEventArgs
     | TestStart of CancelEventArgs
