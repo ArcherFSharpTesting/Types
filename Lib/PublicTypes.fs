@@ -29,15 +29,22 @@ type VerificationInfo = {
     Actual: string
 }
 
-type TestingFailure =
-    | FailureWithMessage of message: string * failure: TestingFailure
-    | CombinationFailure of TestingFailure * TestingFailure
-    | ExceptionFailure of exn
+type TestExecutionFailure =
+    | CombinationFailure of failureA: TestExecutionFailure * failureB: TestExecutionFailure
+    | FailureWithMessage of message: string * failure: TestExecutionFailure
     | VerificationFailure of failure: VerificationInfo * location: CodeLocation
-    | GeneralFailure of message: string * location: CodeLocation
-    | SetupFailure of message: string * location: CodeLocation
+    | TestExceptionFailure of exn
+
+type SetupTearDownFailure =
+    | SetupTearDownExceptionFailure of exn
+    | GeneralSetupTearDownFailure of message: String * location: CodeLocation
+
+type TestingFailure =
+    | ExceptionFailure of exn
     | CancelFailure
-    | TearDownFailure of message: string * location: CodeLocation
+    | TestExecutionFailure of TestExecutionFailure 
+    | SetupFailure of SetupTearDownFailure
+    | TearDownFailure of SetupTearDownFailure
     
 type TestResult =
     | Ignored of message: string option * location: CodeLocation
