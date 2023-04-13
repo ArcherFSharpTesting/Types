@@ -33,18 +33,19 @@ type TestExecutionFailure =
     | CombinationFailure of failureA: TestExecutionFailure * failureB: TestExecutionFailure
     | FailureWithMessage of message: string * failure: TestExecutionFailure
     | VerificationFailure of failure: VerificationInfo * location: CodeLocation
-    | TestExceptionFailure of exn
+    | TestExceptionFailure of e: exn
+    | OtherFailure of message: string * location: CodeLocation
 
 type SetupTearDownFailure =
-    | SetupTearDownExceptionFailure of exn
+    | SetupTearDownExceptionFailure of e: exn
     | GeneralSetupTearDownFailure of message: String * location: CodeLocation
 
 type TestingFailure =
-    | ExceptionFailure of exn
+    | ExceptionFailure of e: exn
     | CancelFailure
-    | TestExecutionFailure of TestExecutionFailure 
-    | SetupFailure of SetupTearDownFailure
-    | TearDownFailure of SetupTearDownFailure
+    | TestExecutionFailure of failure: TestExecutionFailure 
+    | SetupFailure of failure: SetupTearDownFailure
+    | TearDownFailure of failure: SetupTearDownFailure
     
 type TestResult =
     | Ignored of message: string option * location: CodeLocation
