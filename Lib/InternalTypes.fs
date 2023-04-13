@@ -8,7 +8,7 @@ open Archer
 type TestEventLifecycle =
     | TestExecutionStarted of CancelEventArgs
     | TestSetupStarted of CancelEventArgs
-    | TestEndSetup of result: TestResult * cancelArgs: CancelEventArgs
+    | TestEndSetup of testResult: TestResult * cancelEventArgs: CancelEventArgs
     | TestStart of CancelEventArgs
     | TestEnd of TestResult
     | TestStartTearDown
@@ -20,7 +20,7 @@ type ITestExecutor =
     [<CLIEvent>]
     abstract member TestLifecycleEvent: IEvent<TestExecutionDelegate, TestEventLifecycle>
 
-    abstract member Execute: FrameworkEnvironment -> TestResult
+    abstract member Execute: environment: FrameworkEnvironment -> TestResult
     
     abstract member Parent: ITest with get
 
