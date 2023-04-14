@@ -33,6 +33,7 @@ type TestFailure =
     | CombinationFailure of failureA: TestFailure * failureB: TestFailure
     | FailureWithMessage of message: string * failure: TestFailure
     | VerificationFailure of failure: VerificationInfo * location: CodeLocation
+    | TestCanceledFailure
     | TestExceptionFailure of e: exn
     | OtherFailure of message: string * location: CodeLocation
     
@@ -43,6 +44,7 @@ type TestResult =
 
 type SetupTeardownFailure =
     | SetupTeardownExceptionFailure of e: exn
+    | SetupTeardownCanceledFailure
     | GeneralSetupTeardownFailure of message: String * location: CodeLocation
     
 type SetupResult =
@@ -54,8 +56,8 @@ type TeardownResult =
     | TeardownSuccess
 
 type GeneralTestingFailure =
-     | ExceptionFailure of e: exn
-     | CancelFailure
+     | GeneralExceptionFailure of e: exn
+     | GeneralCancelFailure
      | GeneralFailure of message: string
 
 type TestExecutionResult =
