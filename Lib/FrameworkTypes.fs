@@ -6,9 +6,15 @@ open System.ComponentModel
 open Archer
 open Archer.CoreTypes.InternalTypes
 
+type TestFailureType =
+    | SetupFailureType of SetupTearDownFailure
+    | TestRunFailureType of TestFailure
+    | TearDownFailureType of SetupTearDownFailure
+    | GeneralFailureType of GeneralTestingFailure
+
 type TestFailContainer =
     | EmptyFailures
-    | FailedTests of (TestingFailure * ITest) list
+    | FailedTests of (TestFailureType * ITest) list
     | FailContainer of name: string * (TestFailContainer list)
     
 type TestSuccessContainer =
