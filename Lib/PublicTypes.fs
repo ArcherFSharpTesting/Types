@@ -29,25 +29,37 @@ type VerificationInfo = {
     Actual: string
 }
 
-type TestExecutionFailure =
-    | CombinationFailure of failureA: TestExecutionFailure * failureB: TestExecutionFailure
-    | FailureWithMessage of message: string * failure: TestExecutionFailure
+type TestFailure =
+    | CombinationFailure of failureA: TestFailure * failureB: TestFailure
+    | FailureWithMessage of message: string * failure: TestFailure
     | VerificationFailure of failure: VerificationInfo * location: CodeLocation
     | TestExceptionFailure of e: exn
     | OtherFailure of message: string * location: CodeLocation
+    
+type TestResult =
+    | TestFailure of TestFailure
+    | TestIgnored of message: string option * CodeLocation
+    | TestSuccess
 
 type SetupTearDownFailure =
     | SetupTearDownExceptionFailure of e: exn
     | GeneralSetupTearDownFailure of message: String * location: CodeLocation
-
-type TestingFailure =
-    | ExceptionFailure of e: exn
-    | CancelFailure
-    | TestExecutionFailure of failure: TestExecutionFailure 
-    | SetupFailure of failure: SetupTearDownFailure
-    | TearDownFailure of failure: SetupTearDownFailure
     
-type TestResult =
-    | TestIgnored of message: string option * location: CodeLocation
-    | TestSuccess
-    | TestFailure of failure: TestingFailure
+type SetupResult =
+    | SetupFailure of SetupTearDownFailure
+    | SetupSuccess
+    
+type TeardownResult =
+    | TeardownFailure of SetupTearDownFailure
+    | TearDownSuccess
+
+type GeneralTestingFailure =
+     | ExceptionFailure of e: exn
+     | CancelFailure
+     | GeneralFailure of message: string
+
+type TestExecutionResult =
+    | SetupFailure of SetupTearDownFailure
+    | TestResult of TestResult
+    | TearDownFailure of SetupTearDownFailure
+    | GeneralFailure of GeneralTestingFailure
