@@ -61,7 +61,7 @@ type GeneralTestingFailure =
      | GeneralFailure of message: string
 
 type TestExecutionResult =
-    | SetupFailure of SetupTeardownFailure
-    | TestResult of TestResult
-    | TeardownFailure of SetupTeardownFailure
-    | GeneralFailure of GeneralTestingFailure
+    | SetupExecutionFailure of SetupTeardownFailure
+    | TestExecutionResult of TestResult
+    | TeardownExecutionFailure of SetupTeardownFailure
+    | GeneralExecutionFailure of GeneralTestingFailure
