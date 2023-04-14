@@ -11,7 +11,7 @@ type TestEventLifecycle =
     | TestEndSetup of result: SetupResult * cancelEventArgs: CancelEventArgs
     | TestStart of CancelEventArgs
     | TestEnd of TestResult
-    | TestStartTearDown
+    | TestStartTeardown
     | TestEndExecution of TestExecutionResult
     
 type TestExecutionDelegate = delegate of obj * TestEventLifecycle -> unit
@@ -31,7 +31,7 @@ and ITest =
 type TestTiming = {
     Setup: TimeSpan
     Test: TimeSpan
-    TearDown: TimeSpan
+    Teardown: TimeSpan
     Total: TimeSpan
 }
     

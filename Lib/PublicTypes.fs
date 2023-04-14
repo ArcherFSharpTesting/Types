@@ -41,17 +41,17 @@ type TestResult =
     | TestIgnored of message: string option * CodeLocation
     | TestSuccess
 
-type SetupTearDownFailure =
-    | SetupTearDownExceptionFailure of e: exn
-    | GeneralSetupTearDownFailure of message: String * location: CodeLocation
+type SetupTeardownFailure =
+    | SetupTeardownExceptionFailure of e: exn
+    | GeneralSetupTeardownFailure of message: String * location: CodeLocation
     
 type SetupResult =
-    | SetupFailure of SetupTearDownFailure
+    | SetupFailure of SetupTeardownFailure
     | SetupSuccess
     
 type TeardownResult =
-    | TeardownFailure of SetupTearDownFailure
-    | TearDownSuccess
+    | TeardownFailure of SetupTeardownFailure
+    | TeardownSuccess
 
 type GeneralTestingFailure =
      | ExceptionFailure of e: exn
@@ -59,7 +59,7 @@ type GeneralTestingFailure =
      | GeneralFailure of message: string
 
 type TestExecutionResult =
-    | SetupFailure of SetupTearDownFailure
+    | SetupFailure of SetupTeardownFailure
     | TestResult of TestResult
-    | TearDownFailure of SetupTearDownFailure
+    | TeardownFailure of SetupTeardownFailure
     | GeneralFailure of GeneralTestingFailure

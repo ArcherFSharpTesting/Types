@@ -7,9 +7,9 @@ open Archer
 open Archer.CoreTypes.InternalTypes
 
 type TestFailureType =
-    | SetupFailureType of SetupTearDownFailure
+    | SetupFailureType of SetupTeardownFailure
     | TestRunFailureType of TestFailure
-    | TearDownFailureType of SetupTearDownFailure
+    | TeardownFailureType of SetupTeardownFailure
     | GeneralFailureType of GeneralTestingFailure
 
 type TestFailContainer =
