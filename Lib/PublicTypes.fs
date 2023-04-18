@@ -32,14 +32,13 @@ type VerificationInfo = {
 type TestFailure =
     | CombinationFailure of failureA: TestFailure * failureB: TestFailure
     | FailureWithMessage of message: string * failure: TestFailure
-    | VerificationFailure of failure: VerificationInfo * location: CodeLocation
-    | TestCanceledFailure
-    | TestExceptionFailure of e: exn
-    | OtherFailure of message: string * location: CodeLocation
+    | ExpectationVerificationFailure of failure: VerificationInfo
+    | ExpectationOtherFailure of message: string
     
 type TestResult =
-    | TestFailure of TestFailure
+    | TestExpectationFailure of TestFailure * CodeLocation
     | TestIgnored of message: string option * CodeLocation
+    | TestExceptionFailure of e: exn
     | TestSuccess
 
 type SetupTeardownFailure =
