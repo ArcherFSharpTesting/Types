@@ -29,16 +29,19 @@ type VerificationInfo = {
     Actual: string
 }
 
-type TestFailure =
-    | CombinationFailure of failureA: TestFailure * failureB: TestFailure
-    | FailureWithMessage of message: string * failure: TestFailure
+type TestExpectationFailure =
+    | CombinationFailure of failureA: TestExpectationFailure * failureB: TestExpectationFailure
+    | FailureWithMessage of message: string * failure: TestExpectationFailure
     | ExpectationVerificationFailure of failure: VerificationInfo
     | ExpectationOtherFailure of message: string
     
-type TestResult =
-    | TestExpectationFailure of TestFailure * CodeLocation
+type TestFailure =
+    | TestExpectationFailure of TestExpectationFailure * CodeLocation
     | TestIgnored of message: string option * CodeLocation
     | TestExceptionFailure of e: exn
+    
+type TestResult =
+    | TestFailure of TestFailure
     | TestSuccess
 
 type SetupTeardownFailure =
