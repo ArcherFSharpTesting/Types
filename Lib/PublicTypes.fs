@@ -4,6 +4,8 @@ open System
 
 type TestTag =
     | Category of string
+    | Only
+    | Serial
     
 type CodeLocation = {
     FilePath: string
