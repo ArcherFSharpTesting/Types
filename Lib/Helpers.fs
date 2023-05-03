@@ -11,3 +11,27 @@ let addMany (tests: ITest list list) (framework: IFramework) =
     
 let add (tests: ITest list) (framework: IFramework) =
     framework.AddTests tests
+    
+let getTestName (test: ITest) =
+    test.TestName
+    
+let getTags (test: ITest) =
+    test.Tags
+    
+let getContainerName (test: ITest) =
+    test.ContainerName
+    
+let getContainerPath (test: ITest) =
+    test.ContainerPath
+    
+let getFilePath (test: ITest) =
+    test.Location.FilePath
+    
+let getFileName (test: ITest) =
+    test.Location.FileName
+    
+let getLineNumber (test: ITest) =
+    test.Location.LineNumber
+    
+let getLocation (test: ITest) =
+    test.Location
