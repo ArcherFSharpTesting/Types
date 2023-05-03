@@ -33,5 +33,5 @@ let getFileName (test: ITest) =
 let getLineNumber (test: ITest) =
     test.Location.LineNumber
     
-let getLocation (test: ITest) =
+let getTestLocation (test: ITest) =
     test.Location
