@@ -31,7 +31,7 @@ framework.FrameworkLifecycleEvent
 )
 
 framework
-|> addManyTests [
+|> addMany [
     ``TestResult Plus``.``Test Cases``
 ]
 |> filterRunAndReport testFilter

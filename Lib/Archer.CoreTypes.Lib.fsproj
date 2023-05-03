@@ -25,6 +25,7 @@
     <Compile Include="PublicTypes.fs" />
     <Compile Include="InternalTypes.fs" />
     <Compile Include="FrameworkTypes.fs" />
+    <Compile Include="Helpers.fs" />
   </ItemGroup>
 
   <ItemGroup>
