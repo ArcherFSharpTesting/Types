@@ -1,5 +1,5 @@
 [<AutoOpen>]
-module Archer.Helpers
+module Archer.CoreTypes.InternalTypes.Helpers
 
 open Archer.CoreTypes.InternalTypes
 open Archer.CoreTypes.InternalTypes.FrameworkTypes
