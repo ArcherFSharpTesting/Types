@@ -32,12 +32,12 @@ type VerificationInfo = {
 }
 
 type TestExpectationFailure =
-    | CombinationFailure of failureA: TestExpectationFailure * failureB: TestExpectationFailure
     | FailureWithMessage of message: string * failure: TestExpectationFailure
     | ExpectationVerificationFailure of failure: VerificationInfo
     | ExpectationOtherFailure of message: string
     
 type TestFailure =
+    | CombinationFailure of failureA: (TestFailure * CodeLocation option) * failureB: (TestFailure * CodeLocation option)
     | TestExpectationFailure of TestExpectationFailure * CodeLocation
     | TestIgnored of message: string option * CodeLocation
     | TestExceptionFailure of e: exn
@@ -45,6 +45,17 @@ type TestFailure =
 type TestResult =
     | TestFailure of TestFailure
     | TestSuccess
+    static member (+) (left: TestResult, right: TestResult) =
+        match left, right with
+        | TestFailure leftFailure, TestFailure rightFailure  ->
+            CombinationFailure ((leftFailure, None), (rightFailure, None))
+            |> TestFailure
+            
+        
+        | TestFailure testFailure, TestSuccess
+        | TestSuccess, TestFailure testFailure ->
+            testFailure |> TestFailure
+        | TestSuccess, TestSuccess -> TestSuccess
 
 type SetupTeardownFailure =
     | SetupTeardownExceptionFailure of e: exn
