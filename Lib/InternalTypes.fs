@@ -20,7 +20,7 @@ type ITestExecutor =
     [<CLIEvent>]
     abstract member TestLifecycleEvent: IEvent<TestExecutionDelegate, TestEventLifecycle>
 
-    abstract member Execute: environment: FrameworkEnvironment -> TestExecutionResult
+    abstract member Execute: environment: RunnerEnvironment -> TestExecutionResult
     
     abstract member Parent: ITest with get
 

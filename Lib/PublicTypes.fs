@@ -20,9 +20,9 @@ type ITestInfo =
     abstract member Location: CodeLocation with get
     abstract member Tags: TestTag seq
     
-type FrameworkEnvironment = {
-    FrameworkName: string
-    FrameworkVersion: Version
+type RunnerEnvironment = {
+    RunnerName: string
+    RunnerVersion: Version
     TestInfo: ITestInfo
 }
 

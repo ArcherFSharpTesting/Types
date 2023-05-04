@@ -2,15 +2,15 @@
 module Archer.CoreTypes.InternalTypes.Helpers
 
 open Archer.CoreTypes.InternalTypes
-open Archer.CoreTypes.InternalTypes.FrameworkTypes
+open Archer.CoreTypes.InternalTypes.RunnerTypes
 
-let addMany (tests: ITest list list) (framework: IFramework) =
+let addMany (tests: ITest list list) (runner: IRunner) =
     let tests = tests |> List.concat
     
-    tests |> framework.AddTests
+    tests |> runner.AddTests
     
-let add (tests: ITest list) (framework: IFramework) =
-    framework.AddTests tests
+let add (tests: ITest list) (runner: IRunner) =
+    runner.AddTests tests
     
 let getTestName (test: ITest) =
     test.TestName

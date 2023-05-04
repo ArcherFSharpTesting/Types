@@ -44,11 +44,11 @@
         },
         {
             "name": "pack",
-            "command": "gittey up-version && gittey push && dotnet pack"
+            "command": "gittey commit && gittey up-version && gittey push && dotnet pack"
         },
         {
             "name": "pack:unsafe",
-            "command": "gittey up-version:unsafe && dotnet pack ./lib/"
+            "command": "gittey commit && gittey up-version:unsafe && dotnet pack ./lib/"
         },
         {
             "name": "up-version",

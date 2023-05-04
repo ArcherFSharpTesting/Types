@@ -1,4 +1,4 @@
-namespace Archer.CoreTypes.InternalTypes.FrameworkTypes
+namespace Archer.CoreTypes.InternalTypes.RunnerTypes
 
 open System
 open System.ComponentModel
@@ -34,54 +34,54 @@ type RunResults = {
     Seed: int
 }
 
-type FrameworkEventLifecycle =
-    | FrameworkStartExecution of CancelEventArgs
-    | FrameworkTestLifeCycle of ITest * TestEventLifecycle * CancelEventArgs
-    | FrameworkEndExecution
+type RunnerEventLifecycle =
+    | RunnerStartExecution of CancelEventArgs
+    | RunnerTestLifeCycle of ITest * TestEventLifecycle * CancelEventArgs
+    | RunnerEndExecution
     
-type FrameworkExecutionDelegate = delegate of obj * FrameworkEventLifecycle -> unit
+type RunnerExecutionDelegate = delegate of obj * RunnerEventLifecycle -> unit
 
-type FrameWorkTestArgs (test: ITest) =
+type RunnerTestArgs (test: ITest) =
     inherit EventArgs ()
     
     member _.Test with get () = test
 
-type FrameWorkTestResultArgs (test: ITest, result: TestResult) =
+type RunnerTestResultArgs (test: ITest, result: TestResult) =
     inherit EventArgs ()
     
     member _.Test with get () = test
     member _.Result with get () = result
 
-type FrameworkTestCancelArgs (cancel: bool, test: ITest) =
+type RunnerTestCancelArgs (cancel: bool, test: ITest) =
     inherit CancelEventArgs (cancel)
 
-    new (test) = FrameworkTestCancelArgs (false, test)
+    new (test) = RunnerTestCancelArgs (false, test)
     
     member _.Test with get () = test
     
-type FrameworkTestResultCancelArgs (cancel: bool, test: ITest, result: TestResult) =
+type RunnerTestResultCancelArgs (cancel: bool, test: ITest, result: TestResult) =
     inherit CancelEventArgs (cancel)
     
-    new (test: ITest) = FrameworkTestResultCancelArgs (false, test, TestSuccess)
+    new (test: ITest) = RunnerTestResultCancelArgs (false, test, TestSuccess)
     
-    new (test: ITest, result: TestResult) = FrameworkTestResultCancelArgs (false, test, result)
+    new (test: ITest, result: TestResult) = RunnerTestResultCancelArgs (false, test, result)
     
     member _.Test with get () = test
     member _.TestResult with get () = result
     
-type FrameworkDelegate = delegate of obj * EventArgs -> unit
-type FrameworkCancelDelegate = delegate of obj * CancelEventArgs -> unit
+type RunnerDelegate = delegate of obj * EventArgs -> unit
+type RunnerCancelDelegate = delegate of obj * CancelEventArgs -> unit
 
-type FrameworkTestDelegate = delegate of obj * FrameWorkTestArgs -> unit
-type FrameworkTestResultDelegate = delegate of obj * FrameWorkTestResultArgs -> unit
-type FrameworkTestCancelDelegate = delegate of obj * FrameworkTestCancelArgs -> unit
-type FrameworkTestResultCancelDelegate = delegate of obj * FrameworkTestResultCancelArgs -> unit
+type RunnerTestDelegate = delegate of obj * RunnerTestArgs -> unit
+type RunnerTestResultDelegate = delegate of obj * RunnerTestResultArgs -> unit
+type RunnerTestCancelDelegate = delegate of obj * RunnerTestCancelArgs -> unit
+type RunnerTestResultCancelDelegate = delegate of obj * RunnerTestResultCancelArgs -> unit
 
-type IFramework =
+type IRunner =
     abstract member Run: unit -> RunResults
     abstract member Run: getSeed: (unit -> int) -> RunResults
     abstract member Run: predicate: (ITest -> bool) -> RunResults
     abstract member Run: predicate: (ITest -> bool) * getSeed: (unit -> int) -> RunResults
-    abstract member AddTests: newTests: ITest seq -> IFramework
+    abstract member AddTests: newTests: ITest seq -> IRunner
     [<CLIEvent>]
-    abstract member FrameworkLifecycleEvent: IEvent<FrameworkExecutionDelegate, FrameworkEventLifecycle>
+    abstract member RunnerLifecycleEvent: IEvent<RunnerExecutionDelegate, RunnerEventLifecycle>
