@@ -26,14 +26,14 @@ type RunnerEnvironment = {
     TestInfo: ITestInfo
 }
 
-type VerificationInfo = {
-    Expected: string
-    Actual: string
-}
+type IVerificationInfo = 
+    abstract member Expected: string with get
+    abstract member Actual: string with get
+
 
 type TestExpectationFailure =
     | FailureWithMessage of message: string * failure: TestExpectationFailure
-    | ExpectationVerificationFailure of failure: VerificationInfo
+    | ExpectationVerificationFailure of failure: IVerificationInfo
     | ExpectationOtherFailure of message: string
     
 type TestFailure =
