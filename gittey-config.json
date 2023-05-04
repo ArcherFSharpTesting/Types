@@ -31,6 +31,10 @@
             "command": "gittey test && git push"
         },
         {
+            "name": "push:unsafe",
+            "command": "git push"
+        },
+        {
             "name": "build",
             "command": "dotnet build"
         },
@@ -43,12 +47,16 @@
             "command": "gittey up-version && gittey push && dotnet pack"
         },
         {
-            "name": "pack-unsafe",
-            "command": "gittey up-version && dotnet pack ./lib/"
+            "name": "pack:unsafe",
+            "command": "gittey up-version:unsafe && dotnet pack ./lib/"
         },
         {
             "name": "up-version",
             "command": "gittey test && \"DotVersion.exe\" --subpatch ./lib/"
+        },
+        {
+            "name": "up-version:unsafe",
+            "command": "\"DotVersion.exe\" --subpatch ./lib/"
         }
     ],
     "collaborators": []
