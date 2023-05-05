@@ -16,10 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Archer.Arrow.Lib" Version="0.0.0.28" />
-    <PackageReference Include="Archer.Bow.Lib" Version="0.0.9.27" />
+    <PackageReference Include="Archer.Arrow.Lib" Version="0.0.0.32" />
+    <PackageReference Include="Archer.Bow.Lib" Version="0.0.9.29" />
     <PackageReference Include="Archer.Fletching.Lib" Version="0.0.0.11" />
-    <PackageReference Include="MicroLang.Lib" Version="0.0.12.45" />
+    <PackageReference Include="MicroLang.Lib" Version="0.0.12.46" />
   </ItemGroup>
 
 </Project>

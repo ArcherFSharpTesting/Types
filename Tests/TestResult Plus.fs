@@ -5,7 +5,13 @@ open Archer.Arrows
 open Archer.Fletching.Types.Internal
 open Archer.MicroLang.VerificationTypes
 
-let private feature = Arrow.NewFeature ()
+let private feature = Arrow.NewFeature (
+    TestTags [
+        Category "TestResult"
+        Category "+"
+    ]
+)
+
 let private failureBuilder = TestResultFailureBuilder id
 
 let ``TestSuccess + TestSuccess returns TestSuccess`` =

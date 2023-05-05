@@ -7,9 +7,6 @@ open MicroLang.Lang
 
 let runner = bow.Runner ()
 
-let testFilter (_test: ITest) =
-    true
-    
 runner.RunnerLifecycleEvent
 |> Event.add (fun args ->
     match args with
@@ -34,4 +31,4 @@ runner
 |> addMany [
     ``TestResult Plus``.``Test Cases``
 ]
-|> filterRunAndReport testFilter
+|> runAndReport
