@@ -80,8 +80,9 @@ type RunnerTestResultCancelDelegate = delegate of obj * RunnerTestResultCancelAr
 type IRunner =
     abstract member Run: unit -> RunResults
     abstract member Run: getSeed: (unit -> int) -> RunResults
-    abstract member Run: predicate: (ITest -> bool) -> RunResults
-    abstract member Run: predicate: (ITest -> bool) * getSeed: (unit -> int) -> RunResults
+    abstract member Run: filter: (ITest list -> ITest list) -> RunResults
+    abstract member Run: filter: (ITest list -> ITest list) * getSeed: (unit -> int) -> RunResults
+    abstract member TestTags: TestTag list with get
     abstract member AddTests: newTests: ITest seq -> IRunner
     [<CLIEvent>]
     abstract member RunnerLifecycleEvent: IEvent<RunnerExecutionDelegate, RunnerEventLifecycle>
