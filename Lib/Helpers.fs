@@ -35,3 +35,6 @@ let getLineNumber (test: ITest) =
     
 let getTestLocation (test: ITest) =
     test.Location
+    
+let getTestExecutor (test: ITest) =
+    test.GetExecutor ()
