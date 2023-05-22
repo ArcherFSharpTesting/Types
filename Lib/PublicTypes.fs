@@ -12,11 +12,14 @@ type CodeLocation = {
     FileName: string
     LineNumber: int
 }
-    
-type ITestInfo =
+
+type ITestNameInfo = 
     abstract member ContainerPath: string with get
     abstract member ContainerName: string with get
     abstract member TestName: string with get
+    
+type ITestInfo =
+    inherit ITestNameInfo
     abstract member Location: CodeLocation with get
     abstract member Tags: TestTag seq
     

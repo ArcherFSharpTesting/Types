@@ -30,6 +30,7 @@
 
   <ItemGroup>
     <PackageReference Include="whats-your-version" Version="2.1.0" />
+    <PackageReference Update="FSharp.Core" Version="7.0.300" />
   </ItemGroup>
 
 </Project>
