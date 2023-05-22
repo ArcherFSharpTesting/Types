@@ -18,10 +18,16 @@ type ITestNameInfo =
     abstract member ContainerName: string with get
     abstract member TestName: string with get
     
+type ITestMetaData =
+    abstract member Tags: TestTag seq
+    
+type ITestLocationInfo =
+    abstract member Location: CodeLocation with get
+    
 type ITestInfo =
     inherit ITestNameInfo
-    abstract member Location: CodeLocation with get
-    abstract member Tags: TestTag seq
+    inherit ITestMetaData
+    inherit ITestLocationInfo
     
 type RunnerEnvironment = {
     RunnerName: string
