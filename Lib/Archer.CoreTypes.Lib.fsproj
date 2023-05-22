@@ -15,6 +15,11 @@
     <RootNamespace>Archer</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <DefaultItemExcludes>$(DefaultItemExcludes);Directory.Build.props</DefaultItemExcludes>
+  </PropertyGroup>
+
+
   <ItemGroup>
     <AssemblyAttribute Include="WhatsYourVersion.BuildDateAttribute">
       <_Parameter1>$([System.DateTime]::UtcNow.ToString("yyyyMMddHHmmss"))</_Parameter1>
