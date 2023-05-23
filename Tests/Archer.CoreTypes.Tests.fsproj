@@ -16,10 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Archer.Arrow.Lib" Version="0.0.0.38" />
-    <PackageReference Include="Archer.Bow.Lib" Version="0.0.9.34" />
-    <PackageReference Include="Archer.Fletching.Lib" Version="0.0.0.22" />
-    <PackageReference Include="MicroLang.Lib" Version="0.0.12.49" />
+    <PackageReference Include="Archer.Arrow.Lib" Version="0.0.0.41" />
+    <PackageReference Include="Archer.Bow.Lib" Version="0.0.9.35" />
+    <PackageReference Include="Archer.Fletching.Lib" Version="0.0.0.25" />
+    <PackageReference Include="MicroLang.Lib" Version="0.0.12.50" />
     <PackageReference Update="FSharp.Core" Version="7.0.300" />
   </ItemGroup>
 
