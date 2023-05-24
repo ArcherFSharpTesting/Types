@@ -35,25 +35,25 @@ type TestTiming = {
     Total: TimeSpan
 }
     
-type TestFailureReport = {
-    Result: TestExecutionResult
-    Time: TestTiming
-    Test: ITest
-}
-
-type TestSuccessReport = {
-    Time: TestTiming
-    Test: ITest
-}
-    
-type TestContainerReport = {
-    ContainerFullName: string
-    ContainerName: string
-    Failures: TestFailureReport list
-    Successes: TestSuccessReport list
-}
-
-type TestReport = {
-    Seed: int
-    TestContainers: TestContainerReport list
-}
+// type TestFailureReport = {
+//     Result: TestExecutionResult
+//     Time: TestTiming
+//     Test: ITest
+// }
+//
+// type TestSuccessReport = {
+//     Time: TestTiming
+//     Test: ITest
+// }
+//     
+// type TestContainerReport = {
+//     ContainerFullName: string
+//     ContainerName: string
+//     Failures: TestFailureReport list
+//     Successes: TestSuccessReport list
+// }
+//
+// type TestReport = {
+//     Seed: int
+//     TestContainers: TestContainerReport list
+// }

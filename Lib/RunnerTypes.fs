@@ -27,12 +27,16 @@ type TestIgnoreContainer =
     | IgnoredTests of (string option * CodeLocation * ITest) list
     | IgnoreContainer of name: string * (TestIgnoreContainer list)
 
-type RunResults = {
-    Failures: TestFailContainer list
-    Successes: TestSuccessContainer list
-    Ignored: TestIgnoreContainer list
-    Seed: int
-}
+type RunResults =
+    {
+        Failures: TestFailContainer list
+        Successes: TestSuccessContainer list
+        Ignored: TestIgnoreContainer list
+        Seed: int
+        Began: DateTime
+        End: DateTime
+    }
+    member this.TotalTime with get () = this.End - this.Began
 
 type RunnerEventLifecycle =
     | RunnerStartExecution of CancelEventArgs
