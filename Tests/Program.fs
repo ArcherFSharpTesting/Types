@@ -3,6 +3,7 @@ open Archer.Bow
 open Archer.CoreTypes.InternalTypes
 open Archer.CoreTypes.InternalTypes.RunnerTypes
 open Archer.CoreTypes.Tests
+open Archer.Logger.Summaries
 open MicroLang.Lang
 
 let runner = bow.Runner ()
@@ -17,12 +18,10 @@ runner.RunnerLifecycleEvent
         | TestEndExecution testExecutionResult ->
             match testExecutionResult with
             | TestExecutionResult TestSuccess -> ()
-            | TestExecutionResult (TestFailure (TestIgnored _)) ->
-                let report = $"%A{test} : (Ignored)"
-                printfn $"%s{report}"
-            | _ -> 
-                let report = $"%A{test} : (Fail)"
-                printfn $"%s{report}"
+            | result ->
+                let transformedResult = defaultTestExecutionResultSummaryTransformer result test
+                printfn $"%s{transformedResult}"
+            
         | _ -> ()
     | RunnerEndExecution ->
         printfn "\n"
