@@ -86,6 +86,30 @@ A collection of related test cases, often grouped by feature or module.
 
 Responsible for executing test cases and reporting results.
 
+### TestFailure ###
+
+**TestFailure**: Represents different ways a test can fail, including expectation failures, ignored tests, and exceptions.
+
+### TestResult ###
+
+**TestResult**: Represents the outcome of a test, either success or failure, and supports combining results.
+
+### SetupResult ###
+
+**SetupResult**: Represents the result of a test setup phase, indicating success or the type of failure.
+
+### TeardownResult ###
+
+**TeardownResult**: Represents the result of a test teardown phase, indicating success or the type of failure.
+
+### GeneralTestingFailure ###
+
+**GeneralTestingFailure**: Represents general failures that can occur during testing, such as exceptions or cancellations.
+
+### TestExecutionResult ###
+
+**TestExecutionResult**: Represents the result of executing a test, including setup, test, teardown, and general execution failures.
+
 ---
 For detailed type definitions, see the `PublicTypes.fs` source file.
 
