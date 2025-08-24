@@ -5,6 +5,7 @@
         (Overview ./overview.md)
         (PublicTypes ./public-types.md)
         (Helpers ./helpers.md)
+        (InternalTypes ./internal-types.md)
     )
 )
 

@@ -9,6 +9,7 @@
 1. Overview: [Archer.CoreTypes Overview](#archercoretypes-overview)
 2. PublicTypes: [Archer.CoreTypes Public Types](#archercoretypes-public-types)
 3. Helpers: [Archer.CoreTypes Helpers](#archercoretypes-helpers)
+4. InternalTypes: [Archer.CoreTypes Internal Types](#archercoretypes-internal-types)
 
 ## Archer.CoreTypes Overview ##
 
@@ -163,6 +164,33 @@ This document provides an overview of the helper functions available in the Arch
 
 ---
 For the full list and detailed definitions, see the `Helpers.fs` source file.
+
+## Archer.CoreTypes Internal Types ##
+
+This document describes key internal types used within Archer.CoreTypes, which are essential for test execution and lifecycle management.
+
+### TestEventLifecycle ###
+
+**TestEventLifecycle**: Represents the different stages and events in the lifecycle of a test, such as start, setup, execution, teardown, and completion.
+
+### TestExecutionDelegate ###
+
+**TestExecutionDelegate**: A delegate type for handling test event lifecycle notifications, typically used for event-driven test execution.
+
+### ITestExecutor ###
+
+**ITestExecutor**: Interface for executing tests, exposing lifecycle events and execution methods, as well as a reference to the parent test.
+
+### ITest ###
+
+**ITest**: Interface representing a test, combining test info and providing a method to get its executor.
+
+### TestTiming ###
+
+**TestTiming**: Record type capturing timing information for setup, test, teardown, and total duration of a test.
+
+---
+For detailed type definitions, see the `InternalTypes.fs` source file.
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
