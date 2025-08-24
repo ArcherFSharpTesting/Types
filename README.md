@@ -38,6 +38,38 @@ For more details, see the source files in the `Lib` directory.
 
 This document describes the main public types exposed by the Archer.CoreTypes library. These types are intended for use by consumers of the framework, such as test authors and library integrators.
 
+### TestTag ###
+
+**TestTag**: Represents tags that can be associated with tests, such as categories, Only, or Serial execution.
+
+### CodeLocation ###
+
+**CodeLocation**: Contains file path, file name, and line number information for a test.
+
+### ITestNameInfo ###
+
+**ITestNameInfo**: Interface providing properties for container path, container name, and test name.
+
+### ITestMetaData ###
+
+**ITestMetaData**: Interface providing access to a sequence of test tags.
+
+### ITestLocationInfo ###
+
+**ITestLocationInfo**: Interface providing access to the code location of a test.
+
+### ITestInfo ###
+
+**ITestInfo**: Combines `ITestNameInfo`, `ITestMetaData`, and `ITestLocationInfo` for complete test information.
+
+### RunnerEnvironment ###
+
+**RunnerEnvironment**: Contains runner name, version, and test info for the current test execution environment.
+
+### IVerificationInfo ###
+
+**IVerificationInfo**: Interface providing expected and actual values for verification in assertions.
+
 ### AssertionResult ###
 
 Represents the result of an assertion in a test. Typically includes information about success, failure, and error messages.
