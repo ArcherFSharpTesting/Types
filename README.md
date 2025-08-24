@@ -10,6 +10,7 @@
 2. PublicTypes: [Archer.CoreTypes Public Types](#archercoretypes-public-types)
 3. Helpers: [Archer.CoreTypes Helpers](#archercoretypes-helpers)
 4. InternalTypes: [Archer.CoreTypes Internal Types](#archercoretypes-internal-types)
+5. RunnerTypes: [Archer.CoreTypes Runner Types](#archercoretypes-runner-types)
 
 ## Archer.CoreTypes Overview ##
 
@@ -191,6 +192,49 @@ This document describes key internal types used within Archer.CoreTypes, which a
 
 ---
 For detailed type definitions, see the `InternalTypes.fs` source file.
+
+## Archer.CoreTypes Runner Types ##
+
+This document describes the runner types and containers used in Archer.CoreTypes, which are essential for managing test execution, results, and events.
+
+### TestFailureType ###
+
+**TestFailureType**: Represents the type of failure that can occur during a test run, including setup, test, teardown, and general failures.
+
+### TestFailContainer ###
+
+**TestFailContainer**: Container for failed tests, supporting nested failure structures and grouping by name.
+
+### TestSuccessContainer ###
+
+**TestSuccessContainer**: Container for successful tests, supporting nested success structures and grouping by name.
+
+### TestIgnoreContainer ###
+
+**TestIgnoreContainer**: Container for ignored tests, supporting nested ignore structures and grouping by name.
+
+### RunResults ###
+
+**RunResults**: Holds the results of a test run, including lists of failures, successes, ignored tests, the random seed, and timing information.
+
+### RunnerEventLifecycle ###
+
+**RunnerEventLifecycle**: Represents the lifecycle events of a test runner, such as start, per-test events, and end.
+
+### RunnerExecutionDelegate ###
+
+**RunnerExecutionDelegate**: Delegate type for handling runner event lifecycle notifications.
+
+### RunnerTestArgs, RunnerTestResultArgs, RunnerTestCancelArgs, RunnerTestResultCancelArgs ###
+
+**RunnerTestArgs, RunnerTestResultArgs, RunnerTestCancelArgs, RunnerTestResultCancelArgs**: Event argument types used for runner events, providing access to test and result data.
+
+### IRunner ###
+
+**IRunner**: Interface for a test runner, providing methods to run tests, add tests, access test tags, and subscribe to runner lifecycle events.
+
+---
+For detailed type definitions, see the `RunnerTypes.fs` source file.
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
