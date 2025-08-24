@@ -7,6 +7,7 @@
 # Archer.CoreTypes: Common Types for F# Testing Frameworks #
 
 1. Overview: [Archer.CoreTypes Overview](#archercoretypes-overview)
+2. PublicTypes: [Archer.CoreTypes Public Types](#archercoretypes-public-types)
 
 ## Archer.CoreTypes Overview ##
 
@@ -31,6 +32,29 @@ Reference Archer.CoreTypes in your F# test projects to access these shared types
 
 ---
 For more details, see the source files in the `Lib` directory.
+
+## Archer.CoreTypes Public Types ##
+
+This document describes the main public types exposed by the Archer.CoreTypes library. These types are intended for use by consumers of the framework, such as test authors and library integrators.
+
+### AssertionResult ###
+
+Represents the result of an assertion in a test. Typically includes information about success, failure, and error messages.
+
+### TestCase ###
+
+Defines a single test case, including its name, input data, and expected outcome.
+
+### TestSuite ###
+
+A collection of related test cases, often grouped by feature or module.
+
+### TestRunner ###
+
+Responsible for executing test cases and reporting results.
+
+---
+For detailed type definitions, see the `PublicTypes.fs` source file.
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
