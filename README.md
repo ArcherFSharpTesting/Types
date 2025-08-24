@@ -8,6 +8,7 @@
 
 1. Overview: [Archer.CoreTypes Overview](#archercoretypes-overview)
 2. PublicTypes: [Archer.CoreTypes Public Types](#archercoretypes-public-types)
+3. Helpers: [Archer.CoreTypes Helpers](#archercoretypes-helpers)
 
 ## Archer.CoreTypes Overview ##
 
@@ -55,6 +56,57 @@ Responsible for executing test cases and reporting results.
 
 ---
 For detailed type definitions, see the `PublicTypes.fs` source file.
+
+## Archer.CoreTypes Helpers ##
+
+This document provides an overview of the helper functions available in the Archer.CoreTypes library. Helpers are utility constructs designed to simplify common operations and support the core functionality of the framework.
+
+### addMany ###
+
+**addMany**: Adds multiple lists of tests to a runner by flattening the lists and passing them to the runner's `AddTests` method.
+
+### add ###
+
+**add**: Adds a list of tests to a runner using the runner's `AddTests` method.
+
+### getTestName ###
+
+**getTestName**: Retrieves the name of a test.
+
+### getTags ###
+
+**getTags**: Retrieves the tags associated with a test.
+
+### getContainerName ###
+
+**getContainerName**: Retrieves the container name of a test.
+
+### getContainerPath ###
+
+**getContainerPath**: Retrieves the container path of a test.
+
+### getFilePath ###
+
+**getFilePath**: Retrieves the file path where the test is located.
+
+### getFileName ###
+
+**getFileName**: Retrieves the file name where the test is located.
+
+### getLineNumber ###
+
+**getLineNumber**: Retrieves the line number where the test is defined.
+
+### getTestLocation ###
+
+**getTestLocation**: Retrieves the location information of a test.
+
+### getTestExecutor ###
+
+**getTestExecutor**: Retrieves the executor function for a test.
+
+---
+For the full list and detailed definitions, see the `Helpers.fs` source file.
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->

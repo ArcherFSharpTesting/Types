@@ -4,6 +4,7 @@
     (include
         (Overview ./overview.md)
         (PublicTypes ./public-types.md)
+        (Helpers ./helpers.md)
     )
 )
 
