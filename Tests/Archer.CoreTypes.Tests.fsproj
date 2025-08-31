@@ -12,15 +12,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lib\Archer.CoreTypes.Lib.fsproj" />
+    <ProjectReference Include="..\Lib\Archer.Types.Lib.fsproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Archer.Arrow.Lib" Version="0.0.0.43" />
-    <PackageReference Include="Archer.Bow.Lib" Version="0.0.9.37" />
-    <PackageReference Include="Archer.Fletching.Lib" Version="0.0.0.33" />
-    <PackageReference Include="Archer.Logger.Lib" Version="0.0.0.6" />
-    <PackageReference Include="MicroLang.Lib" Version="0.0.12.58" />
+    <PackageReference Include="Archer.Core" Version="0.0.0.1" />
+    <PackageReference Include="Archer.Runner" Version="0.0.0.1" />
+    <PackageReference Include="Archer.Validations" Version="0.0.0.1" />
+    <PackageReference Include="Archer.Reporting" Version="0.0.0.1" />
+    <PackageReference Include="MicroLang.Lib" Version="0.0.0.1" />
     <PackageReference Update="FSharp.Core" Version="7.0.300" />
   </ItemGroup>
 

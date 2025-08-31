@@ -1,11 +1,11 @@
 module Archer.Types.Tests.``TestResult Plus``
 
 open Archer
-open Archer.Arrows
-open Archer.Fletching.Types.Internal
+open Archer.Core
+open Archer.Validations.Types.Internal
 open Archer.MicroLang.VerificationTypes
 
-let private feature = Arrow.NewFeature (
+let private feature = FeatureFactory.NewFeature (
     TestTags [
         Category "TestResult"
         Category "+"
