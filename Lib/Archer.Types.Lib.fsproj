@@ -12,7 +12,7 @@
     <PackageTags>F# FSharp Test Testing Framework Unit UnitTest</PackageTags>
     <PackageReleaseNotes>None</PackageReleaseNotes>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <AssemblyName>Archer.Types.Lib</AssemblyName>
+    <AssemblyName>Archer.Types</AssemblyName>
     <RootNamespace>Archer</RootNamespace>
   </PropertyGroup>
 
