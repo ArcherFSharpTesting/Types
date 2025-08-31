@@ -1,10 +1,10 @@
 <!-- (dl
 (section-meta
-    (title Archer.CoreTypes Internal Types)
+    (title Archer.Types Internal Types)
 )
 ) -->
 
-This document describes key internal types used within Archer.CoreTypes, which are essential for test execution and lifecycle management.
+This document describes key internal types used within Archer.Types, which are essential for test execution and lifecycle management.
 
 <!-- (dl (# TestEventLifecycle)) -->
 **TestEventLifecycle**: Represents the different stages and events in the lifecycle of a test, such as start, setup, execution, teardown, and completion.

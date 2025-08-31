@@ -1,10 +1,10 @@
 <!-- (dl
 (section-meta
-    (title Archer.CoreTypes Overview)
+    (title Archer.Types Overview)
 )
 ) -->
 
-Archer.CoreTypes is a foundational library for F# testing frameworks, providing a set of common types that are shared and reused across the Archer ecosystem. These types are designed to promote consistency, type safety, and ease of use when building and running tests.
+Archer.Types is a foundational library for F# testing frameworks, providing a set of common types that are shared and reused across the Archer ecosystem. These types are designed to promote consistency, type safety, and ease of use when building and running tests.
 
 
 <!-- (dl (# Key Features)) -->
@@ -19,7 +19,7 @@ Archer.CoreTypes is a foundational library for F# testing frameworks, providing 
 - **Helpers:** Utility types and functions to support common operations.
 
 <!-- (dl (# Usage)) -->
-Reference Archer.CoreTypes in your F# test projects to access these shared types and ensure compatibility with other Archer libraries.
+Reference Archer.Types in your F# test projects to access these shared types and ensure compatibility with other Archer libraries.
 
 ---
 For more details, see the source files in the `Lib` directory.

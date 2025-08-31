@@ -1,6 +1,5 @@
-
 (section-meta
-	(title Archer.CoreTypes: Common Types for F# Testing Frameworks)
+	(title Archer.Types: Common Types for F# Testing Frameworks)
     (include
         (Overview ./overview.md)
         (PublicTypes ./public-types.md)

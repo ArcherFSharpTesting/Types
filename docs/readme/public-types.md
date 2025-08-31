@@ -1,11 +1,10 @@
-
 <!-- (dl
 (section-meta
-	(title Archer.CoreTypes Public Types)
+	(title Archer.Types Public Types)
 )
 ) -->
 
-This document describes the main public types exposed by the Archer.CoreTypes library. These types are intended for use by consumers of the framework, such as test authors and library integrators.
+This document describes the main public types exposed by the Archer.Types library. These types are intended for use by consumers of the framework, such as test authors and library integrators.
 
 <!-- (dl (# TestTag)) -->
 **TestTag**: Represents tags that can be associated with tests, such as categories, Only, or Serial execution.
@@ -63,4 +62,5 @@ Responsible for executing test cases and reporting results.
 **TestExecutionResult**: Represents the result of executing a test, including setup, test, teardown, and general execution failures.
 
 ---
+For detailed type definitions, see the `PublicTypes.fs` source file.
 For detailed type definitions, see the `PublicTypes.fs` source file.

@@ -4,17 +4,17 @@
 
 <!-- Compiled with doculisp https://www.npmjs.com/package/doculisp -->
 
-# Archer.CoreTypes: Common Types for F# Testing Frameworks #
+# Archer.Types: Common Types for F# Testing Frameworks #
 
-1. Overview: [Archer.CoreTypes Overview](#archercoretypes-overview)
-2. PublicTypes: [Archer.CoreTypes Public Types](#archercoretypes-public-types)
-3. Helpers: [Archer.CoreTypes Helpers](#archercoretypes-helpers)
-4. InternalTypes: [Archer.CoreTypes Internal Types](#archercoretypes-internal-types)
-5. RunnerTypes: [Archer.CoreTypes Runner Types](#archercoretypes-runner-types)
+1. Overview: [Archer.Types Overview](#archertypes-overview)
+2. PublicTypes: [Archer.Types Public Types](#archertypes-public-types)
+3. Helpers: [Archer.Types Helpers](#archertypes-helpers)
+4. InternalTypes: [Archer.Types Internal Types](#archertypes-internal-types)
+5. RunnerTypes: [Archer.Types Runner Types](#archertypes-runner-types)
 
-## Archer.CoreTypes Overview ##
+## Archer.Types Overview ##
 
-Archer.CoreTypes is a foundational library for F# testing frameworks, providing a set of common types that are shared and reused across the Archer ecosystem. These types are designed to promote consistency, type safety, and ease of use when building and running tests.
+Archer.Types is a foundational library for F# testing frameworks, providing a set of common types that are shared and reused across the Archer ecosystem. These types are designed to promote consistency, type safety, and ease of use when building and running tests.
 
 ### Key Features ###
 
@@ -31,14 +31,14 @@ Archer.CoreTypes is a foundational library for F# testing frameworks, providing 
 
 ### Usage ###
 
-Reference Archer.CoreTypes in your F# test projects to access these shared types and ensure compatibility with other Archer libraries.
+Reference Archer.Types in your F# test projects to access these shared types and ensure compatibility with other Archer libraries.
 
 ---
 For more details, see the source files in the `Lib` directory.
 
-## Archer.CoreTypes Public Types ##
+## Archer.Types Public Types ##
 
-This document describes the main public types exposed by the Archer.CoreTypes library. These types are intended for use by consumers of the framework, such as test authors and library integrators.
+This document describes the main public types exposed by the Archer.Types library. These types are intended for use by consumers of the framework, such as test authors and library integrators.
 
 ### TestTag ###
 
@@ -114,10 +114,11 @@ Responsible for executing test cases and reporting results.
 
 ---
 For detailed type definitions, see the `PublicTypes.fs` source file.
+For detailed type definitions, see the `PublicTypes.fs` source file.
 
-## Archer.CoreTypes Helpers ##
+## Archer.Types Helpers ##
 
-This document provides an overview of the helper functions available in the Archer.CoreTypes library. Helpers are utility constructs designed to simplify common operations and support the core functionality of the framework.
+This document provides an overview of the helper functions available in the Archer.Types library. Helpers are utility constructs designed to simplify common operations and support the core functionality of the framework.
 
 ### addMany ###
 
@@ -166,9 +167,9 @@ This document provides an overview of the helper functions available in the Arch
 ---
 For the full list and detailed definitions, see the `Helpers.fs` source file.
 
-## Archer.CoreTypes Internal Types ##
+## Archer.Types Internal Types ##
 
-This document describes key internal types used within Archer.CoreTypes, which are essential for test execution and lifecycle management.
+This document describes key internal types used within Archer.Types, which are essential for test execution and lifecycle management.
 
 ### TestEventLifecycle ###
 
@@ -193,9 +194,9 @@ This document describes key internal types used within Archer.CoreTypes, which a
 ---
 For detailed type definitions, see the `InternalTypes.fs` source file.
 
-## Archer.CoreTypes Runner Types ##
+## Archer.Types Runner Types ##
 
-This document describes the runner types and containers used in Archer.CoreTypes, which are essential for managing test execution, results, and events.
+This document describes the runner types and containers used in Archer.Types, which are essential for managing test execution, results, and events.
 
 ### TestFailureType ###
 

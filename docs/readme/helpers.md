@@ -1,10 +1,10 @@
 <!-- (dl
 (section-meta
-	(title Archer.CoreTypes Helpers)
+	(title Archer.Types Helpers)
 )
 ) -->
 
-This document provides an overview of the helper functions available in the Archer.CoreTypes library. Helpers are utility constructs designed to simplify common operations and support the core functionality of the framework.
+This document provides an overview of the helper functions available in the Archer.Types library. Helpers are utility constructs designed to simplify common operations and support the core functionality of the framework.
 
 <!-- (dl (# addMany)) -->
 **addMany**: Adds multiple lists of tests to a runner by flattening the lists and passing them to the runner's `AddTests` method.

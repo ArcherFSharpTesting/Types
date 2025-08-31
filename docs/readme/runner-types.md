@@ -1,10 +1,10 @@
 <!-- (dl
 (section-meta
-    (title Archer.CoreTypes Runner Types)
+    (title Archer.Types Runner Types)
 )
 ) -->
 
-This document describes the runner types and containers used in Archer.CoreTypes, which are essential for managing test execution, results, and events.
+This document describes the runner types and containers used in Archer.Types, which are essential for managing test execution, results, and events.
 
 <!-- (dl (# TestFailureType)) -->
 **TestFailureType**: Represents the type of failure that can occur during a test run, including setup, test, teardown, and general failures.
