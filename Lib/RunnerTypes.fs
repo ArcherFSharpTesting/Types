@@ -1,10 +1,10 @@
-namespace Archer.CoreTypes.InternalTypes.RunnerTypes
+namespace Archer.Types.InternalTypes.RunnerTypes
 
 open System
 open System.ComponentModel
 
 open Archer
-open Archer.CoreTypes.InternalTypes
+open Archer.Types.InternalTypes
 
 /// <summary>
 /// Represents the type of failure that can occur during a test run.

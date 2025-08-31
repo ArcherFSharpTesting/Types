@@ -1,12 +1,11 @@
-
 /// <summary>
 /// Provides helper functions for working with Archer test types and runners.
 /// </summary>
 [<AutoOpen>]
-module Archer.CoreTypes.InternalTypes.Helpers
+module Archer.Types.InternalTypes.Helpers
 
-open Archer.CoreTypes.InternalTypes
-open Archer.CoreTypes.InternalTypes.RunnerTypes
+open Archer.Types.InternalTypes
+open Archer.Types.InternalTypes.RunnerTypes
 
 /// <summary>
 /// Adds multiple lists of tests to a runner.

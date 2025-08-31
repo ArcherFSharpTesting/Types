@@ -1,4 +1,4 @@
-namespace Archer.CoreTypes.InternalTypes
+namespace Archer.Types.InternalTypes
 
 open System
 open System.ComponentModel

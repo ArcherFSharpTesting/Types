@@ -1,4 +1,4 @@
-module Archer.CoreTypes.Tests.``TestResult Plus``
+module Archer.Types.Tests.``TestResult Plus``
 
 open Archer
 open Archer.Arrows

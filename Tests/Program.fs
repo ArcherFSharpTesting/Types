@@ -1,8 +1,8 @@
 ﻿open Archer
 open Archer.Bow
-open Archer.CoreTypes.InternalTypes
-open Archer.CoreTypes.InternalTypes.RunnerTypes
-open Archer.CoreTypes.Tests
+open Archer.Types.InternalTypes
+open Archer.Types.InternalTypes.RunnerTypes
+open Archer.Types.Tests
 open Archer.Logger.Summaries
 open MicroLang.Lang
 
